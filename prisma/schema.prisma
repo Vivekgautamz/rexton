@@ -1,6 +1,6 @@
 // REXTON WATCHES — Prisma schema
 // Money is stored in integer minor units (paise). ₹1 = 100.
-// SQLite does not support Json[] or String[] columns; structured data is JSON-encoded Strings.
+// Structured data (arrays, JSON) is stored as JSON-encoded Strings for portability.
 
 generator client {
   provider = "prisma-client"
@@ -8,7 +8,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
